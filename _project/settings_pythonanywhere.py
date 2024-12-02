@@ -101,8 +101,17 @@ WSGI_APPLICATION = '_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'verasolarova$default',
+        #nazev databaze z pythonanywhere.com
+        'USER': 'verasolarova',
+        #username z  pythonanywhere.com
+        'PASSWORD':'hesloheslo',
+        #heslo nastavene k databazi z pythonanywhere.com
+        'HOST':'verasolarova.mysql.pythonanywhere-services.com',
+        #Database host address: z pythonanywhere.com
+        'PORT':'3066',
+        #port na mysql 
     }
 }
 
