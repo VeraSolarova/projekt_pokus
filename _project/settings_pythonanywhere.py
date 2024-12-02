@@ -27,6 +27,28 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 #databazove nastaveni - password - take musi byt schovane - ostra databaze s uzivateli se musi prejmenovat, aby se nprepsala pres github db sql lite  3 pro vyvoj, - pro ostry provoz postgre, php databze 
 
 
+# settings pro web nastavím na pythonanywhere.com - web , WSGI configuration file:/var/www/verasolarova_pythonanywhere_com_wsgi.py
+
+# +++++++++++ DJANGO +++++++++++
+# To use your own django app use code like this:
+#import os
+#import sys
+#
+## assuming your django settings file is at '/home/verasolarova/mysite/mysite/settings.py'
+## and your manage.py is is at '/home/verasolarova/mysite/manage.py'
+#path = '/home/verasolarova/projekt_urazy'
+#if path not in sys.path:
+   # sys.path.append(path)
+#
+#os.environ['DJANGO_SETTINGS_MODULE'] = '_project.settings_pythonanywhere'
+#
+## then:
+#from django.core.wsgi import get_wsgi_application
+#application = get_wsgi_application()
+
+
+
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
