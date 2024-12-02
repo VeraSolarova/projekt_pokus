@@ -127,7 +127,10 @@ USE_TZ = True
 STATIC_URL = 's/'
 #staticke dela vyvojar, dynamicke -MEDIA - treba obrazky doda uzivatel¨
 STATIC_ROOT = 'static/'
-
+# na  https://www.pythonanywhere.com/ v zalozce web nastavim cestu
+#/s/	/home/verasolarova/projekt_urazy/static	 
+# python manage.py collectstatic  - na pythonanywhere.com v konzoli bash
+#  
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / "_media" #kam  se bude ukladat 
 
