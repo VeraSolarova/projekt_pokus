@@ -1,40 +1,40 @@
 {% extends 'urazy/_layout.html' %}
-{% block content %}      
-<h1>Přehled úrazů dle věkových skupin</h1>
-    <table border="1">
+
+{% block content %}
+  {% load static %} 
+  <link rel="stylesheet" href="{% static '_layout.css' %}">
+
+  <h2>Přehled četnosti úrazů dle věkových skupin</h2>
+
+  <div class ="center">
+  <table>
         <thead>
-            <tr>
-                <th>Věk</th>
-                {% for rok in years %}
-                    <th>{{ rok }}</th>
-                {% endfor %}
-            </tr>
+        <tr>
+            <th>Věk</th>
+            {% for rok in roky %}
+            <th>{{ rok }}</th>
+            {% endfor %}
+        </tr>
         </thead>
         <tbody>
-            {% for age_group in age_groups %}
-                <tr>
-                    <td>{{ age_group.vek }}</td> 
-                    {% for rok in years %}
-                        <td>
-                            {% for data in vek_data %}
-                                {% if data.vek == age_group.vek and data.rok == rok %}
-                                    {{ data.pocet }}  
-                                {% endif %}
-                            {% endfor %}
-                        </td>
-                    {% endfor %}
-                </tr>
+        {% for vek in kategorie %}
+            <tr>
+            <td>{{ vek }}</td>
+            {% for rok in roky %}
+                <td>
+                {% for hodnota in data %}
+                    {% if hodnota.vek == vek and hodnota.rok == rok %}
+                    {{ hodnota.pocet }}
+                    {% endif %}
+                {% endfor %}
+                </td>
             {% endfor %}
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
+  </div>
+
+  <img src="data:image/png;base64,{{ obrazek_grafu }}" alt="Sloupcový graf">
 {% endblock %}
-   
 
-    
-
-    
-
-
-
-</body>
-</html>
